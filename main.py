@@ -5,6 +5,17 @@ from datetime import datetime, timedelta
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
 
+def view_avaible_books():
+    print ("AVAILABLE BOOKS:")
+    print()
+    found = False
+    for book in library_books:
+        if book["available"]: #if this value is true then function runs
+            found = True
+            print(f"ID: {book['id']}: {book['title']} by {book['author']}")
+        else:
+            print(f"{book['title']} is not available right now.")
+    print()
 
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
@@ -44,4 +55,5 @@ from datetime import datetime, timedelta
 
 if __name__ == "__main__":
     # You can use this space to test your functions
+    view_avaible_books()
     pass
